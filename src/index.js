@@ -57,12 +57,15 @@ class MonacoEditor extends React.Component {
       if (context.__REACT_MONACO_EDITOR_LOADER_ISPENDING__) {
         // Do not use webpack
         if (requireConfig.paths && requireConfig.paths.vs) {
-          context.require.config(requireConfig);
+          context.amdRequire.config(requireConfig);
         }
       }
       
       // Load monaco
-      context.require(['vs/editor/editor.main'], () => {
+		self.module = undefined;
+		self.process.browser = true;
+
+      context.amdRequire(['vs/editor/editor.main'], () => {
         this.initMonaco();
       });
 
