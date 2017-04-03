@@ -54,8 +54,5 @@
   },
   "dependencies": {
     "monaco-editor": "~0.8.x"
-  },
-  "pre-commit": [
-    "lint"
-  ]
+  }
 }
