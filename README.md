@@ -62,6 +62,7 @@ class App extends React.Component {
         width="800"
         height="600"
         language="javascript"
+        theme="vs-dark"
         value={code}
         options={options}
         onChange={::this.onChange}
@@ -93,7 +94,7 @@ module.exports = {
 };
 ```
 
-Fill `from` field with the actual path of `monaco-editor` package in node_modules.  
+Fill `from` field with the actual path of `monaco-editor` package in node_modules.
 
 ### Using with require.config (do not need Webpack)
 
@@ -130,6 +131,8 @@ class App extends React.Component {
 
 Both them are valid ways to config loader url and relative path of module.
 
+The default value for `requriedConfig.url` is `vs/loader.js`.
+
 > You may need to note the [cross domain case](https://github.com/Microsoft/monaco-editor#integrate-cross-domain).
 
 ## Properties
@@ -138,11 +141,12 @@ If you specify `value` property, the component behaves in controlled mode.
 Otherwise, it behaves in uncontrolled mode.
 
 - `width` width of editor. Defaults to `100%`.
-- `height` height of editor. Defaults to `500`.
+- `height` height of editor. Defaults to `100%`.
 - `value` value of the auto created model in the editor.
 - `defaultValue` the initial value of the auto created model in the editor.
 - `language` the initial language of the auto created model in the editor.
-- `options` refer to [Monaco interface IEditorOptions](https://github.com/Microsoft/monaco-editor/blob/master/website/playground/monaco.d.ts.txt#L1029).
+- `theme` the theme of the editor
+- `options` refer to [Monaco interface IEditorConstructionOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html).
 - `onChange(newValue, event)` an event emitted when the content of the current model has changed.
 - `editorWillMount(monaco)` an event emitted before the editor mounted (similar to `componentWillMount` of React).
 - `editorDidMount(editor, monaco)` an event emitted when the editor has been mounted (similar to `componentDidMount` of React).
@@ -151,7 +155,7 @@ Otherwise, it behaves in uncontrolled mode.
 
 ## Events & Methods
 
-Refer to [Monaco interface IEditor](https://github.com/Microsoft/monaco-editor/blob/master/website/playground/monaco.d.ts.txt#L2813).
+Refer to [Monaco interface IEditor](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditor.html).
 
 ## Q & A
 
@@ -201,6 +205,10 @@ class App extends React.Component {
     }
 }
 ```
+
+### Use multiple themes
+
+[Monaco only supports one theme](https://github.com/Microsoft/monaco-editor/issues/338).
 
 # License
 
