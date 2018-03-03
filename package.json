@@ -57,8 +57,8 @@
     "react": "^15.x || ^16.x"
   },
   "dependencies": {
-    "monaco-editor": "^0.10.0",
-    "prop-types": "^15.5.10"
+    "monaco-editor": "^0.10.1",
+    "prop-types": "^15.6.1"
   },
   "pre-commit": [
     "lint"
