@@ -61,6 +61,6 @@
     "prop-types": "^15.6.1"
   },
   "pre-commit": [
-    "lint"
+
   ]
 }

@@ -160,27 +160,6 @@ class MonacoEditor extends React.Component {
   }
 }
 
-MonacoEditor.propTypes = {
-  width: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
-  height: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
-  value: PropTypes.string,
-  defaultValue: PropTypes.string,
-  language: PropTypes.string,
-  theme: PropTypes.string,
-  options: PropTypes.object,
-  editorDidMount: PropTypes.func,
-  editorWillMount: PropTypes.func,
-  onChange: PropTypes.func,
-  requireConfig: PropTypes.object,
-  context: PropTypes.object // eslint-disable-line react/require-default-props
-};
-
 MonacoEditor.defaultProps = {
   width: '100%',
   height: '100%',
